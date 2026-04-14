@@ -1,0 +1,6 @@
+explain the basics function you want it to perform
+do you want a conversational type or a direct button type?
+where do you want it to live?
+how often does the business information change?
+is chat going be logged or deleted?
+what material can you provide?
