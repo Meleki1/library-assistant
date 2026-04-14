@@ -8,7 +8,8 @@ def process_book(book_id, file_path):
     text = load_document(file_path)
     chunks = split_text(text)
     metadatas = [
-        {"book_id": book_id, 
+        { 
+        "book_id": book_id,
         "book_name": book_name
         } 
         for _ in chunks

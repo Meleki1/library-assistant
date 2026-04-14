@@ -2,8 +2,9 @@ from app.db.database import get_db
 from langchain_openai import ChatOpenAI
 
 
-llm = ChatOpenAI(model="gpt-4o-mini")
 
+
+llm = ChatOpenAI(model="gpt-4o-mini")
 
 
 
