@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.api.routes import index, ask, status,debug
+from app.api.routes import index, ask, status,debug, summarize, summarizeSection
 from fastapi.middleware.cors import CORSMiddleware
 
 
@@ -8,10 +8,13 @@ app = FastAPI()
 
 
 
+
 app.include_router(debug.router)
 app.include_router(index.router)
 app.include_router(ask.router)
 app.include_router(status.router)
+app.include_router(summarize.router)
+app.include_router(summarizeSection.router)
 
 
 app.add_middleware(

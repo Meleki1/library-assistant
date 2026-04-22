@@ -1,10 +1,10 @@
 import os
+import re
 from dotenv import load_dotenv
 from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
 from pypdf import PdfReader
 from docx import Document
-
 
 
 
@@ -36,10 +36,9 @@ def load_document(file_path):
     elif ext == ".txt":
         with open(file_path, "r", encoding="utf-8")as f:
             return f.read()
-
-
     else:
         raise ValueError(f"unsupported format type{ext}")
+
 
 
 def split_text(full_text, chunk_size=3000):

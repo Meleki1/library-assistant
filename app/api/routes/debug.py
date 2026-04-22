@@ -6,6 +6,8 @@ from app.db.database import get_db
 router = APIRouter()
 DEBUG_MODE = os.getenv("DEBUG_MODE", "false") == "true"
 
+
+
 if DEBUG_MODE:
     @router.get("/debug/books")
     def list_books():

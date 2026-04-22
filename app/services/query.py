@@ -2,10 +2,7 @@ from app.db.database import get_db
 from langchain_openai import ChatOpenAI
 
 
-
-
 llm = ChatOpenAI(model="gpt-4o-mini")
-
 
 
 def ask_question(question: str, book_id: str = None):

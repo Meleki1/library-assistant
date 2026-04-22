@@ -39,7 +39,6 @@ def index_all_books():
         book_id = book["book_id"]
         file_path = book["file_path"]
 
-        
         existing = db.get(where={"book_id": book_id})
 
         if existing and existing.get("documents"):
