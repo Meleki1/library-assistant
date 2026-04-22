@@ -1,4 +1,4 @@
-import os
+import time
 import uuid
 from fastapi import UploadFile, File, BackgroundTasks
 from fastapi import APIRouter
@@ -12,7 +12,7 @@ router = APIRouter()
 @router.post ("/index_book")
 async def index_book(file: UploadFile = File(...), background_tasks: BackgroundTasks = None):
     book_id = str(uuid.uuid4())
-    file_path = f"documents/{book_id}_{file.filename}"
+    file_path = f"documents/{int(time.time())}_{file.filename}"
     
     with open(file_path, "wb") as f:
         content = await file.read()

@@ -6,7 +6,9 @@ from app.db.database import get_db
 
 def process_book(book_id, file_path):
 
-    book_name = os.path.splitext(os.path.basename(file_path))[0].replace("_", " ")
+    filename = os.path.basename(file_path)
+    name_without_ext = os.path.splitext(filename)[0]
+    book_name = name_without_ext.split("_", 1)[-1].replace("_", " ")
 
     text = load_document(file_path)
 
