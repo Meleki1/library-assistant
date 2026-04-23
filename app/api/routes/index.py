@@ -1,5 +1,5 @@
 import time
-import uuid
+import hashlib
 from fastapi import UploadFile, File, BackgroundTasks
 from fastapi import APIRouter
 from app.core.state import book_status
@@ -9,9 +9,12 @@ router = APIRouter()
 
 
 
+def generate_book_id(file_name: str):
+    return hashlib.md5(file_name.encode()).hexdigest()
+
 @router.post ("/index_book")
 async def index_book(file: UploadFile = File(...), background_tasks: BackgroundTasks = None):
-    book_id = str(uuid.uuid4())
+    book_id = generate_book_id(file.filename)
     file_path = f"documents/{int(time.time())}_{file.filename}"
     
     with open(file_path, "wb") as f:

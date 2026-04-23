@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.api.routes import index, ask, status,debug, summarize, summarizeSection
+from app.api.routes import index, ask, status,debug, summarize, summarizeSection,chat
 from fastapi.middleware.cors import CORSMiddleware
 
 
@@ -15,6 +15,7 @@ app.include_router(ask.router)
 app.include_router(status.router)
 app.include_router(summarize.router)
 app.include_router(summarizeSection.router)
+app.include_router(chat.router)
 
 
 app.add_middleware(

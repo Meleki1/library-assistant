@@ -14,3 +14,7 @@ class SummarizeRequest(BaseModel):
 class SummarizeSectionRequest(BaseModel):
     book_id: str
     topic: Optional[str] = None 
+
+class ChatRequest(BaseModel):
+    message: str
+    book_id: str | None = None

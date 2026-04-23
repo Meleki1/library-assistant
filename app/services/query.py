@@ -42,14 +42,15 @@ def ask_question(question: str, book_id: str = None):
     "I don't know based on available books"
     - Do NOT guess, infer, fabricate, or introduce information not present in the context
     - You may rephrase or summarize the context for clarity
+    - Do NOT use symbols like **, ##, -, or any markdown formatting
 
 
     RESPONSE STYLE:
     - Be clear, structured, and concise.
-    - Do not include unnecessary explanations.
+    - Make it feel like a human explanation and make it broad when explaining
     - Do not include opinions or extra commentary.
     - When answering, clearly structure your response:
-    - Direct answer
+    - Direct answer only when user ask for direct answer
     - Do NOT include sources in your answer
     - Sources will be added separately
 
@@ -58,6 +59,7 @@ def ask_question(question: str, book_id: str = None):
     2. Check if the answer can be derived directly from the context
     3. If YES → answer using only that information and cite sources.
     4. If NO → respond with the exact fallback sentence.
+    
 
     Context:
     {context}
