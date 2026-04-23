@@ -76,7 +76,6 @@ Development Notes
 -CORS is open for local testing and should be restricted in production
 
 Future Improvements
--Summarization endpoint
 -Chapter-based querying
 -Authentication & user-specific access
 
