@@ -1,16 +1,13 @@
 import time
-import hashlib
 from fastapi import UploadFile, File, BackgroundTasks
 from fastapi import APIRouter
-from app.core.state import book_status
+from app.core.state import book_status, generate_book_id
 from app.services.pipeline import process_book
 
 router = APIRouter()
 
 
 
-def generate_book_id(file_name: str):
-    return hashlib.md5(file_name.encode()).hexdigest()
 
 @router.post ("/index_book")
 async def index_book(file: UploadFile = File(...), background_tasks: BackgroundTasks = None):
